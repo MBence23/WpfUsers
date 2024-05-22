@@ -40,12 +40,32 @@ namespace WpfUsers
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            Users.Add(new User("Sallai András", "sandras@gmail.com"));
+            //Users.Add(new User("Sallai András", "sandras@gmail.com"));
+            User user = lbUsers.SelectedItem as User;
+            //MessageBox.Show(user.Name);
+            user.Id = 0;
+            context.Users.Add(user);
+            context.SaveChanges();
+            RefleshUsers();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
         private void Close_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }
